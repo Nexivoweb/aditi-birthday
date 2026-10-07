@@ -1,0 +1,1631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Aditi 💖</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow:hidden;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#05000c;
+    color:white;
+}
+
+#canvas{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:1;
+}
+
+/* ==============================
+   BACKGROUND
+============================== */
+
+.bg{
+    position:fixed;
+    inset:0;
+
+    background:
+    radial-gradient(circle at 20% 20%, #42115e 0%, transparent 35%),
+    radial-gradient(circle at 80% 80%, #570d48 0%, transparent 35%),
+    linear-gradient(135deg,#05000c,#140020,#090016);
+
+    z-index:0;
+
+    animation:bgMove 8s infinite alternate;
+}
+
+@keyframes bgMove{
+
+    from{
+        filter:hue-rotate(0deg);
+    }
+
+    to{
+        filter:hue-rotate(20deg);
+    }
+
+}
+
+/* ==============================
+   SCREENS
+============================== */
+
+.screen{
+
+    position:fixed;
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:25px;
+
+    z-index:5;
+
+    transition:
+    opacity 1s ease,
+    transform 1s ease;
+
+}
+
+.hidden{
+
+    opacity:0;
+    pointer-events:none;
+    transform:scale(.92);
+
+}
+
+/* ==============================
+   INTRO
+============================== */
+
+.small{
+
+    color:#e8caff;
+
+    font-size:18px;
+
+    letter-spacing:4px;
+
+    margin-bottom:15px;
+
+}
+
+.title{
+
+    font-size:clamp(40px,9vw,80px);
+
+    color:#ffd8fa;
+
+    text-shadow:
+
+    0 0 10px #ff4fdd,
+    0 0 25px #c52cff,
+    0 0 50px #7b2cff;
+
+    animation:glow 2s infinite alternate;
+
+}
+
+@keyframes glow{
+
+    from{
+
+        text-shadow:
+        0 0 10px #ff4fdd,
+        0 0 20px #c52cff;
+
+    }
+
+    to{
+
+        text-shadow:
+        0 0 20px #ff4fdd,
+        0 0 45px #c52cff,
+        0 0 80px #6e21ff;
+
+    }
+
+}
+
+.subtitle{
+
+    margin-top:18px;
+
+    color:#dfc5f5;
+
+    font-size:18px;
+
+    line-height:1.6;
+
+}
+
+/* ==============================
+   GIFT
+============================== */
+
+.gift{
+
+    font-size:90px;
+
+    margin:35px;
+
+    animation:
+
+    float 2s infinite ease-in-out,
+    giftGlow 2s infinite alternate;
+
+}
+
+@keyframes float{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-15px);
+    }
+
+}
+
+@keyframes giftGlow{
+
+    from{
+        filter:
+        drop-shadow(0 0 5px #ff4fd8);
+    }
+
+    to{
+        filter:
+        drop-shadow(0 0 30px #ff4fd8);
+    }
+
+}
+
+/* ==============================
+   BUTTON
+============================== */
+
+.btn{
+
+    border:none;
+
+    padding:16px 30px;
+
+    border-radius:50px;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    letter-spacing:1px;
+
+    cursor:pointer;
+
+    background:
+    linear-gradient(
+        90deg,
+        #a529ff,
+        #ff3fba
+    );
+
+    box-shadow:
+
+    0 0 15px #d72cff,
+    0 0 35px rgba(255,50,190,.5);
+
+    transition:.3s;
+
+}
+
+.btn:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:
+
+    0 0 25px #ff43ce,
+    0 0 60px rgba(255,50,190,.8);
+
+}
+
+/* ==============================
+   COUNTDOWN
+============================== */
+
+#number{
+
+    font-size:150px;
+
+    font-weight:bold;
+
+    color:#ffd84a;
+
+    text-shadow:
+
+    0 0 20px #ff9d00,
+    0 0 60px #ff4f00;
+
+}
+
+/* ==============================
+   BIRTHDAY
+============================== */
+
+.birthdayTitle{
+
+    font-size:
+    clamp(30px,8vw,65px);
+
+    color:#ffe66d;
+
+    text-shadow:
+
+    0 0 15px #ffb000,
+    0 0 40px #ff4fa3;
+
+}
+
+.name{
+
+    font-size:
+    clamp(55px,15vw,110px);
+
+    margin:5px 0;
+
+    color:#ff71cf;
+
+    text-shadow:
+
+    0 0 15px #ff3ac8,
+    0 0 40px #c02cff,
+    0 0 80px #742cff;
+
+    animation:namePulse 1.8s infinite;
+
+}
+
+@keyframes namePulse{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.05);
+    }
+
+}
+
+.specialLine{
+
+    color:#f5dafa;
+
+    font-size:
+    clamp(15px,4vw,20px);
+
+    margin:4px;
+
+}
+
+/* ==============================
+   CAKE
+============================== */
+
+.cakeArea{
+
+    position:relative;
+
+    width:300px;
+
+    height:260px;
+
+    margin-top:10px;
+
+}
+
+.plate{
+
+    position:absolute;
+
+    width:280px;
+
+    height:35px;
+
+    background:#9d67d9;
+
+    border-radius:50%;
+
+    bottom:5px;
+
+    left:10px;
+
+    box-shadow:
+    0 0 30px #b33cff;
+
+}
+
+.cakeBottom{
+
+    position:absolute;
+
+    width:240px;
+
+    height:90px;
+
+    left:30px;
+
+    bottom:25px;
+
+    background:
+    linear-gradient(
+        #ff82b4,
+        #d93c82
+    );
+
+    border-radius:
+    15px 15px 25px 25px;
+
+    box-shadow:
+    0 0 30px rgba(255,60,170,.5);
+
+}
+
+.creamBottom{
+
+    position:absolute;
+
+    width:240px;
+
+    height:35px;
+
+    left:30px;
+
+    bottom:95px;
+
+    background:#ffd6e8;
+
+    border-radius:50%;
+
+}
+
+.cakeTop{
+
+    position:absolute;
+
+    width:175px;
+
+    height:70px;
+
+    left:62px;
+
+    bottom:110px;
+
+    background:
+    linear-gradient(
+        #ffa6c9,
+        #ef609c
+    );
+
+    border-radius:
+    12px 12px 18px 18px;
+
+}
+
+.creamTop{
+
+    position:absolute;
+
+    width:175px;
+
+    height:30px;
+
+    left:62px;
+
+    bottom:165px;
+
+    background:#fff0f7;
+
+    border-radius:50%;
+
+}
+
+.cakeName{
+
+    position:absolute;
+
+    width:100%;
+
+    bottom:53px;
+
+    font-size:21px;
+
+    font-weight:bold;
+
+    z-index:4;
+
+}
+
+/* ==============================
+   CANDLES
+============================== */
+
+.candle{
+
+    position:absolute;
+
+    width:9px;
+
+    height:42px;
+
+    bottom:188px;
+
+    background:
+    repeating-linear-gradient(
+        45deg,
+        #67dfff,
+        #67dfff 5px,
+        white 5px,
+        white 9px
+    );
+
+    z-index:5;
+
+}
+
+.c1{
+    left:105px;
+}
+
+.c2{
+    left:146px;
+}
+
+.c3{
+    left:187px;
+}
+
+.flame{
+
+    position:absolute;
+
+    width:17px;
+
+    height:27px;
+
+    left:-4px;
+
+    top:-29px;
+
+    border-radius:
+    50% 50% 50% 50%;
+
+    background:
+    radial-gradient(
+        circle at 50% 70%,
+        white,
+        #ffe83f 35%,
+        #ff8c00 75%
+    );
+
+    box-shadow:
+
+    0 0 10px #ffd700,
+    0 0 25px #ff8500,
+    0 0 40px #ff5500;
+
+    animation:
+    flameMove .15s infinite alternate;
+
+}
+
+@keyframes flameMove{
+
+    from{
+        transform:
+        scale(1)
+        rotate(-3deg);
+    }
+
+    to{
+        transform:
+        scale(.9,1.1)
+        rotate(3deg);
+    }
+
+}
+
+/* ==============================
+   SMOKE
+============================== */
+
+.smoke{
+
+    position:absolute;
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    background:
+    rgba(220,220,220,.6);
+
+    top:-25px;
+
+    left:0;
+
+    animation:
+    smokeUp 1.5s forwards;
+
+}
+
+@keyframes smokeUp{
+
+    to{
+
+        transform:
+        translateY(-70px)
+        translateX(20px)
+        scale(3);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ==============================
+   FINAL MESSAGE
+============================== */
+
+.finalBox{
+
+    width:min(
+        850px,
+        92%
+    );
+
+    padding:
+    28px 22px;
+
+    border:
+    1px solid
+    rgba(255,180,255,.6);
+
+    border-radius:25px;
+
+    background:
+    rgba(30,0,50,.55);
+
+    backdrop-filter:
+    blur(10px);
+
+    box-shadow:
+
+    0 0 25px
+    rgba(220,50,255,.35);
+
+}
+
+.finalHeading{
+
+    color:#ff83d8;
+
+    font-size:
+    clamp(25px,6vw,40px);
+
+    margin-bottom:20px;
+
+}
+
+.message{
+
+    opacity:0;
+
+    transform:
+    translateY(15px);
+
+    font-size:
+    clamp(15px,4vw,19px);
+
+    line-height:1.7;
+
+    margin:10px 0;
+
+    transition:1s;
+
+}
+
+.message.show{
+
+    opacity:1;
+
+    transform:
+    translateY(0);
+
+}
+
+.lastWish{
+
+    margin-top:20px;
+
+    font-size:
+    clamp(22px,6vw,35px);
+
+    color:#ffe66d;
+
+    opacity:0;
+
+    transition:1.5s;
+
+    text-shadow:
+    0 0 20px #ff8c00;
+
+}
+
+.lastWish.show{
+    opacity:1;
+}
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media(max-width:600px){
+
+    .screen{
+        padding:18px;
+    }
+
+    .gift{
+        font-size:75px;
+        margin:25px;
+    }
+
+    .cakeArea{
+        transform:scale(.85);
+        margin-top:-5px;
+    }
+
+    .btn{
+        font-size:14px;
+        padding:14px 22px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<canvas id="canvas"></canvas>
+
+
+<!-- =================================
+     INTRO SCREEN
+================================== -->
+
+<section
+id="intro"
+class="screen"
+>
+
+<div class="small">
+8 OCTOBER ✦ JUST FOR YOU
+</div>
+
+<h1 class="title">
+A LITTLE SURPRISE
+</h1>
+
+<p class="subtitle">
+Some surprises aren't wrapped in paper...<br>
+this one was made especially for you.
+</p>
+
+<div class="gift">
+🎁
+</div>
+
+<button
+class="btn"
+onclick="startSurprise()"
+>
+OPEN YOUR SURPRISE ✨
+</button>
+
+</section>
+
+
+<!-- =================================
+     COUNTDOWN
+================================== -->
+
+<section
+id="countdown"
+class="screen hidden"
+>
+
+<div id="number">
+3
+</div>
+
+<p class="subtitle">
+Something special is coming...
+</p>
+
+</section>
+
+
+<!-- =================================
+     BIRTHDAY SCREEN
+================================== -->
+
+<section
+id="birthday"
+class="screen hidden"
+>
+
+<h1 class="birthdayTitle">
+✨ HAPPY BIRTHDAY ✨
+</h1>
+
+<h2 class="name">
+ADITI
+</h2>
+
+<p class="specialLine">
+Some days are special because of the date...
+</p>
+
+<p class="specialLine">
+but 8 October is special because it's YOUR day. 💖
+</p>
+
+
+<div class="cakeArea">
+
+<div class="plate"></div>
+
+<div class="cakeBottom"></div>
+
+<div class="creamBottom"></div>
+
+<div class="cakeTop"></div>
+
+<div class="creamTop"></div>
+
+<div class="cakeName">
+ADITI 💖
+</div>
+
+
+<div class="candle c1">
+<div class="flame"></div>
+</div>
+
+<div class="candle c2">
+<div class="flame"></div>
+</div>
+
+<div class="candle c3">
+<div class="flame"></div>
+</div>
+
+</div>
+
+
+<button
+id="blowBtn"
+class="btn"
+onclick="blowCandles()"
+>
+MAKE A WISH & BLOW THE CANDLES 🕯️
+</button>
+
+</section>
+
+
+<!-- =================================
+     FINAL SCREEN
+================================== -->
+
+<section
+id="final"
+class="screen hidden"
+>
+
+<div class="finalBox">
+
+<h1 class="finalHeading">
+💖 A Birthday Wish For You 💖
+</h1>
+
+<p class="message">
+I hope today gives you countless reasons to smile
+and memories that stay with you for a very long time. ✨
+</p>
+
+<p class="message">
+May every new chapter of your life bring you
+more happiness, success and beautiful moments.
+</p>
+
+<p class="message">
+Keep chasing your dreams, keep believing in yourself,
+and never stop being the amazing person you are. 🌙✨
+</p>
+
+<p class="message">
+There are so many people in this world...
+</p>
+
+<p class="message">
+but some people simply make life feel
+a little more special.
+</p>
+
+<p class="message">
+And you are definitely one of them. 💖
+</p>
+
+<div class="lastWish">
+
+HAPPY BIRTHDAY, ADITI 🎂✨
+
+<br>
+
+<span style="
+font-size:60%;
+color:#ffb9e8;
+">
+Keep Smiling • Keep Shining
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+<script>
+
+/* =====================================
+   CANVAS
+===================================== */
+
+const canvas =
+document.getElementById("canvas");
+
+const ctx =
+canvas.getContext("2d");
+
+let W;
+let H;
+
+function resize(){
+
+    W = canvas.width =
+    window.innerWidth;
+
+    H = canvas.height =
+    window.innerHeight;
+
+}
+
+resize();
+
+window.addEventListener(
+"resize",
+resize
+);
+
+
+/* =====================================
+   STARS
+===================================== */
+
+let stars=[];
+
+for(let i=0;i<100;i++){
+
+    stars.push({
+
+        x:Math.random()*innerWidth,
+
+        y:Math.random()*innerHeight,
+
+        r:Math.random()*2+0.5,
+
+        a:Math.random(),
+
+        s:Math.random()*0.02+0.005
+
+    });
+
+}
+
+
+/* =====================================
+   FLOATING HEARTS
+===================================== */
+
+let hearts=[];
+
+function createHeart(){
+
+    hearts.push({
+
+        x:Math.random()*W,
+
+        y:H+30,
+
+        size:
+        Math.random()*14+8,
+
+        speed:
+        Math.random()*1.2+.4,
+
+        sway:
+        Math.random()*6
+
+    });
+
+}
+
+
+/* =====================================
+   CONFETTI
+===================================== */
+
+let confetti=[];
+
+const colors=[
+
+"#ff4fbf",
+"#ffd84a",
+"#8f5cff",
+"#44dfff",
+"#ffffff",
+"#ff784f"
+
+];
+
+function createConfetti(
+amount=100
+){
+
+    for(let i=0;i<amount;i++){
+
+        confetti.push({
+
+            x:Math.random()*W,
+
+            y:
+            Math.random()*-H,
+
+            w:
+            Math.random()*7+3,
+
+            h:
+            Math.random()*12+5,
+
+            speed:
+            Math.random()*4+2,
+
+            drift:
+            Math.random()*2-1,
+
+            color:
+            colors[
+            Math.floor(
+            Math.random()
+            *colors.length
+            )
+            ],
+
+            rot:
+            Math.random()*6
+
+        });
+
+    }
+
+}
+
+
+/* =====================================
+   FIREWORKS
+===================================== */
+
+let fireworks=[];
+
+function firework(
+x=Math.random()*W,
+y=Math.random()*H*.45
+){
+
+    let color =
+    colors[
+    Math.floor(
+    Math.random()
+    *colors.length
+    )
+    ];
+
+    for(let i=0;i<65;i++){
+
+        let angle =
+        Math.random()
+        *Math.PI*2;
+
+        let speed =
+        Math.random()*5+2;
+
+        fireworks.push({
+
+            x:x,
+            y:y,
+
+            vx:
+            Math.cos(angle)*speed,
+
+            vy:
+            Math.sin(angle)*speed,
+
+            life:1,
+
+            color:color
+
+        });
+
+    }
+
+}
+
+
+/* =====================================
+   DRAW LOOP
+===================================== */
+
+function animate(){
+
+    ctx.clearRect(
+    0,0,W,H
+    );
+
+
+    /* STARS */
+
+    stars.forEach(s=>{
+
+        s.a += s.s;
+
+        if(
+        s.a>1 ||
+        s.a<.2
+        ){
+            s.s*=-1;
+        }
+
+        ctx.globalAlpha=s.a;
+
+        ctx.fillStyle="white";
+
+        ctx.beginPath();
+
+        ctx.arc(
+        s.x,
+        s.y,
+        s.r,
+        0,
+        Math.PI*2
+        );
+
+        ctx.fill();
+
+    });
+
+    ctx.globalAlpha=1;
+
+
+    /* HEARTS */
+
+    hearts.forEach(
+    (h,index)=>{
+
+        h.y-=h.speed;
+
+        h.x +=
+        Math.sin(
+        h.y*.02+h.sway
+        )*.4;
+
+        ctx.font=
+        `${h.size}px Arial`;
+
+        ctx.fillStyle=
+        "#ff77c8";
+
+        ctx.fillText(
+        "♥",
+        h.x,
+        h.y
+        );
+
+        if(h.y<-30){
+
+            hearts.splice(
+            index,1
+            );
+
+        }
+
+    });
+
+
+    /* CONFETTI */
+
+    confetti.forEach(
+    (c,index)=>{
+
+        c.y+=c.speed;
+        c.x+=c.drift;
+
+        ctx.save();
+
+        ctx.translate(
+        c.x,c.y
+        );
+
+        c.rot+=.08;
+
+        ctx.rotate(c.rot);
+
+        ctx.fillStyle=
+        c.color;
+
+        ctx.fillRect(
+        -c.w/2,
+        -c.h/2,
+        c.w,
+        c.h
+        );
+
+        ctx.restore();
+
+        if(c.y>H+20){
+
+            confetti.splice(
+            index,1
+            );
+
+        }
+
+    });
+
+
+    /* FIREWORKS */
+
+    fireworks.forEach(
+    (p,index)=>{
+
+        p.x+=p.vx;
+        p.y+=p.vy;
+
+        p.vy+=.035;
+
+        p.vx*=.99;
+
+        p.life-=.012;
+
+        ctx.globalAlpha=
+        Math.max(
+        p.life,
+        0
+        );
+
+        ctx.fillStyle=
+        p.color;
+
+        ctx.shadowBlur=12;
+
+        ctx.shadowColor=
+        p.color;
+
+        ctx.beginPath();
+
+        ctx.arc(
+        p.x,
+        p.y,
+        2.2,
+        0,
+        Math.PI*2
+        );
+
+        ctx.fill();
+
+        ctx.shadowBlur=0;
+
+        if(p.life<=0){
+
+            fireworks.splice(
+            index,1
+            );
+
+        }
+
+    });
+
+    ctx.globalAlpha=1;
+
+    requestAnimationFrame(
+    animate
+    );
+
+}
+
+animate();
+
+
+setInterval(()=>{
+
+    if(
+    hearts.length<25
+    ){
+        createHeart();
+    }
+
+},500);
+
+
+/* =====================================
+   START SURPRISE
+===================================== */
+
+function startSurprise(){
+
+    document
+    .getElementById("intro")
+    .classList.add("hidden");
+
+    const countdown =
+    document
+    .getElementById(
+    "countdown"
+    );
+
+    countdown
+    .classList
+    .remove("hidden");
+
+    let n=3;
+
+    const number =
+    document
+    .getElementById(
+    "number"
+    );
+
+    number.innerText=n;
+
+    const timer=
+    setInterval(()=>{
+
+        n--;
+
+        if(n>0){
+
+            number.innerText=n;
+
+            number.animate(
+            [
+            {
+            transform:"scale(.4)",
+            opacity:0
+            },
+            {
+            transform:"scale(1.3)",
+            opacity:1
+            },
+            {
+            transform:"scale(1)",
+            opacity:1
+            }
+            ],
+            {
+            duration:700
+            }
+            );
+
+        }
+
+        else{
+
+            clearInterval(
+            timer
+            );
+
+            number.innerText=
+            "SURPRISE!";
+
+            number.style.fontSize=
+            "55px";
+
+            firework(
+            W*.2,
+            H*.25
+            );
+
+            firework(
+            W*.5,
+            H*.15
+            );
+
+            firework(
+            W*.8,
+            H*.25
+            );
+
+            createConfetti(80);
+
+            setTimeout(
+            showBirthday,
+            1200
+            );
+
+        }
+
+    },900);
+
+}
+
+
+/* =====================================
+   BIRTHDAY
+===================================== */
+
+let birthdayFireworks;
+
+function showBirthday(){
+
+    document
+    .getElementById(
+    "countdown"
+    )
+    .classList
+    .add("hidden");
+
+    document
+    .getElementById(
+    "birthday"
+    )
+    .classList
+    .remove("hidden");
+
+    createConfetti(100);
+
+    birthdayFireworks =
+    setInterval(()=>{
+
+        firework(
+        Math.random()*W,
+        Math.random()*H*.35
+        );
+
+    },1100);
+
+}
+
+
+/* =====================================
+   BLOW CANDLES
+===================================== */
+
+function blowCandles(){
+
+    const flames =
+    document.querySelectorAll(
+    ".flame"
+    );
+
+    flames.forEach(
+    flame=>{
+
+        flame.style.display=
+        "none";
+
+        const smoke=
+        document.createElement(
+        "div"
+        );
+
+        smoke.className=
+        "smoke";
+
+        flame
+        .parentElement
+        .appendChild(
+        smoke
+        );
+
+    });
+
+
+    document
+    .getElementById(
+    "blowBtn"
+    )
+    .style.display=
+    "none";
+
+
+    /* MASSIVE FIREWORKS */
+
+    firework(
+    W*.1,
+    H*.2
+    );
+
+    firework(
+    W*.3,
+    H*.12
+    );
+
+    firework(
+    W*.5,
+    H*.22
+    );
+
+    firework(
+    W*.7,
+    H*.12
+    );
+
+    firework(
+    W*.9,
+    H*.2
+    );
+
+    createConfetti(180);
+
+
+    setTimeout(
+    showFinal,
+    1800
+    );
+
+}
+
+
+/* =====================================
+   FINAL
+===================================== */
+
+function showFinal(){
+
+    clearInterval(
+    birthdayFireworks
+    );
+
+    document
+    .getElementById(
+    "birthday"
+    )
+    .classList
+    .add("hidden");
+
+    const final =
+    document
+    .getElementById(
+    "final"
+    );
+
+    final
+    .classList
+    .remove("hidden");
+
+    const messages =
+    document
+    .querySelectorAll(
+    ".message"
+    );
+
+    messages.forEach(
+    (message,index)=>{
+
+        setTimeout(()=>{
+
+            message
+            .classList
+            .add("show");
+
+            if(
+            index%2===0
+            ){
+
+                firework(
+                Math.random()*W,
+                Math.random()
+                *H*.3
+                );
+
+            }
+
+        },
+        700+
+        index*1100
+        );
+
+    });
+
+
+    setTimeout(()=>{
+
+        document
+        .querySelector(
+        ".lastWish"
+        )
+        .classList
+        .add("show");
+
+        createConfetti(180);
+
+        firework(
+        W*.2,
+        H*.2
+        );
+
+        firework(
+        W*.5,
+        H*.12
+        );
+
+        firework(
+        W*.8,
+        H*.2
+        );
+
+    },
+    700+
+    messages.length
+    *1100
+    );
+
+}
+
+</script>
+
+</body>
+</html>
